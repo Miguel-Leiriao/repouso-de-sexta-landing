@@ -1,31 +1,16 @@
-# Simple Tailwind CSS Starter
+# Repouso de Sexta — Landing Page
 
-This is an extremley simple setup to develop Tailwind projects. This will be used in my Tailwind From Scratch course.
+Landing page do projeto **Repouso de Sexta**, um jornal físico semanal com jogos e puzzles como sudoku, palavras cruzadas, caça-palavras, labirintos, desafios criativos e humor.
 
-## Usage
+Esta página foi desenvolvida com **HTML** e **Tailwind CSS** (sem frameworks adicionais) para ser leve, rápida e fácil de manter.
+O objetivo é recolher inscrições de interessados através de um formulário integrado (Netlify Forms).
 
+---
 Install dependencies
-
-```
 npm install
-```
 
-Run Tailwind CLI in watch mode
+npm audit fix
 
-```
-npm run dev
-```
-
-You can use tailwind classes in any .html files in the root directory
-
-Put any custom CSS that you may have in the **src/input.css** file
-
-Add any config values to the **tailwind.config.js** file
-
-To build once, run
-
-```
 npm run build
-```
 
-You only need to deploy your html files and css/style.css
+npm run watch

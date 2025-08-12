@@ -7,9 +7,11 @@
     "watch": "tailwindcss -i ./src/input.css -o ./css/style.css --watch",
     "build": "tailwindcss -i ./src/input.css -o ./css/style.css"
   },
-  "author": "Brad Traversy",
-  "license": "MIT",
+  "author": "Miguel Leirião",
+  "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41"
   }
 }
