@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Jornal de Jogos — Diversão semanal no papel</title>
+        <meta
+            name="description"
+            content="Sudoku, palavras cruzadas, labirintos e muito mais. Recebe a edição piloto do Jornal de Jogos."
+        />
+        <link rel="preload" href="/css/style.css" as="style" />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body class="min-h-screen antialiased bg-neutral-50 text-neutral-900">
+        <!-- Header -->
+        <header class="border-b border-neutral-200 bg-white/80 backdrop-blur">
+            <div
+                class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between"
+            >
+                <a href="#" class="flex items-center gap-2">
+                    <span class="inline-block h-6 w-6 rounded bg-brand"></span>
+                    <span class="font-extrabold tracking-tight"
+                        >Jornal de Jogos</span
+                    >
+                </a>
+                <nav class="hidden md:flex items-center gap-6 text-sm">
+                    <a href="#preview" class="hover:text-brand"
+                        >Pré‑visualização</a
+                    >
+                    <a href="#como-funciona" class="hover:text-brand"
+                        >Como funciona</a
+                    >
+                    <a href="#faq" class="hover:text-brand">FAQ</a>
+                </nav>
+                <a
+                    href="#newsletter"
+                    class="btn-primary text-sm px-4 py-2 rounded bg-brand text-white hover:bg-brand-dark transition"
+                    >Quero ser avisado</a
+                >
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="relative">
+            <div
+                class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center"
+            >
+                <div>
+                    <h1
+                        class="text-4xl md:text-5xl font-extrabold leading-tight"
+                    >
+                        O teu jornal semanal de
+                        <span class="title-gradient">jogos e puzzles</span>
+                    </h1>
+                    <p class="mt-4 text-lg text-neutral-700">
+                        Sudoku, palavras cruzadas, caça‑palavras, labirintos,
+                        desafios criativos e humor — tudo num jornal físico.
+                        Assina a lista para receber a edição piloto.
+                    </p>
+                    <div class="mt-8">
+                        <!-- Formulário Netlify -->
+                        <form
+                            name="newsletter"
+                            method="POST"
+                            data-netlify="true"
+                            netlify-honeypot="bot-field"
+                            class="w-full max-w-lg"
+                        >
+                            <input
+                                type="hidden"
+                                name="form-name"
+                                value="newsletter"
+                            />
+                            <p class="hidden">
+                                <label
+                                    >Não preencher: <input name="bot-field"
+                                /></label>
+                            </p>
+                            <div class="flex gap-3">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    required
+                                    placeholder="o.teu@email"
+                                    class="flex-1 rounded border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-brand/50"
+                                />
+                                <button
+                                    type="submit"
+                                    class="rounded px-5 py-3 font-semibold bg-brand text-white hover:bg-brand-dark transition"
+                                >
+                                    Enviar
+                                </button>
+                            </div>
+                            <p class="mt-2 text-xs text-neutral-500">
+                                Sem spam. Podes sair quando quiseres.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Mock preview card -->
+                <div id="preview" class="relative">
+                    <div
+                        class="rounded-2xl border border-neutral-200 bg-white shadow-sm p-6"
+                    >
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="inline-block h-8 w-8 rounded bg-brand"
+                            ></span>
+                            <div>
+                                <p
+                                    class="text-sm uppercase tracking-widest text-neutral-500"
+                                >
+                                    Edição Piloto
+                                </p>
+                                <h3 class="text-xl font-bold">
+                                    Repouso de Sexta
+                                </h3>
+                            </div>
+                        </div>
+                        <ul class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                            <li class="rounded-lg border p-3">✓ Sudoku (6)</li>
+                            <li class="rounded-lg border p-3">
+                                ✓ Palavras Cruzadas (2)
+                            </li>
+                            <li class="rounded-lg border p-3">
+                                ✓ Caça‑Palavras (2)
+                            </li>
+                            <li class="rounded-lg border p-3">
+                                ✓ Labirintos (2)
+                            </li>
+                            <li class="rounded-lg border p-3">
+                                ✓ Futoshiki (2)
+                            </li>
+                            <li class="rounded-lg border p-3">
+                                + Humor & Curiosidades
+                            </li>
+                        </ul>
+                        <p class="mt-4 text-xs text-neutral-500">
+                            Soluções incluídas. Cor laranja como elemento visual
+                            principal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como funciona -->
+        <section
+            id="como-funciona"
+            class="bg-white border-y border-neutral-200"
+        >
+            <div class="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold">1) Assina</h3>
+                    <p class="mt-2 text-neutral-700">
+                        Deixa o teu email para receberes novidades e a edição
+                        piloto.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">2) Explora</h3>
+                    <p class="mt-2 text-neutral-700">
+                        Jogos clássicos e criativos, sempre equilibrando
+                        estética e legibilidade.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">3) Dá feedback</h3>
+                    <p class="mt-2 text-neutral-700">
+                        Escolhemos os favoritos da comunidade para as próximas
+                        edições.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="bg-neutral-50">
+            <div class="mx-auto max-w-6xl px-4 py-16">
+                <h2 class="text-2xl font-extrabold">Perguntas frequentes</h2>
+                <div class="mt-6 space-y-4">
+                    <details
+                        class="rounded-lg border border-neutral-200 bg-white p-4"
+                    >
+                        <summary class="font-semibold cursor-pointer">
+                            Quando sai a edição piloto?
+                        </summary>
+                        <p class="mt-2 text-neutral-700">
+                            Em breve. Inscreve-te para seres avisado em primeiro
+                            lugar.
+                        </p>
+                    </details>
+                    <details
+                        class="rounded-lg border border-neutral-200 bg-white p-4"
+                    >
+                        <summary class="font-semibold cursor-pointer">
+                            Há versão digital?
+                        </summary>
+                        <p class="mt-2 text-neutral-700">
+                            Planeada para mais tarde. O foco inicial é a
+                            experiência física.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-10">
+            <div class="mx-auto max-w-6xl px-4 text-sm text-neutral-600">
+                © <span id="year"></span> Jornal de Jogos — Todos os direitos
+                reservados
+            </div>
+        </footer>
+
+        <script>
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+        </script>
+    </body>
+</html>
