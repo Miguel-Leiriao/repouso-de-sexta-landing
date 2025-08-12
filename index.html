@@ -27,8 +27,9 @@
                     <a href="#preview" class="hover:text-brand"
                         >Pré‑visualização</a
                     >
-                    <a href="#como-funciona" class="hover:text-brand"
-                        >Como funciona</a
+                    <a href="#fases" class="hover:text-brand">Fases</a>
+                    <a href="#testemunhos" class="hover:text-brand"
+                        >Testemunhos</a
                     >
                     <a href="#faq" class="hover:text-brand">FAQ</a>
                 </nav>
@@ -49,17 +50,29 @@
                     <h1
                         class="text-4xl md:text-5xl font-extrabold leading-tight"
                     >
-                        O teu jornal semanal de
-                        <span class="title-gradient">jogos e puzzles</span>
+                        12 páginas de
+                        <span class="title-gradient"
+                            >diversão e repouso mental</span
+                        >
                     </h1>
                     <p class="mt-4 text-lg text-neutral-700">
-                        Sudoku, palavras cruzadas, caça‑palavras, labirintos,
-                        desafios criativos e humor — tudo num jornal físico.
-                        Assina a lista para receber a edição piloto.
+                        Este jornal de mini-jogos nasceu da minha necessidade de
+                        abrandar o ritmo num mundo cada vez mais digital. É um
+                        convite a desligar por um momento, aproveitar o fim de
+                        semana para relaxar e, ao mesmo tempo, estimular a
+                        mente. Aqui, cada página é pensada para proporcionar um
+                        equilíbrio entre diversão e desafio, criando pequenos
+                        momentos de tranquilidade e foco que considero
+                        essenciais.
                     </p>
+                    <p class="mt-4 text-lg text-neutral-800 font-semibold">
+                        Deixa o teu email e recebe um aviso quando o projeto
+                        começar a funcionar.
+                    </p>
+
                     <div class="mt-8">
-                        <!-- Formulário Netlify -->
                         <form
+                            id="newsletter"
                             name="newsletter"
                             method="POST"
                             data-netlify="true"
@@ -88,59 +101,50 @@
                                     type="submit"
                                     class="rounded px-5 py-3 font-semibold bg-brand text-white hover:bg-brand-dark transition"
                                 >
-                                    Enviar
+                                    Quero ser avisado
                                 </button>
                             </div>
-                            <p class="mt-2 text-xs text-neutral-500">
-                                Sem spam. Podes sair quando quiseres.
-                            </p>
                         </form>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Mock preview card -->
-                <div id="preview" class="relative">
-                    <div
-                        class="rounded-2xl border border-neutral-200 bg-white shadow-sm p-6"
-                    >
-                        <div class="flex items-center gap-3">
-                            <span
-                                class="inline-block h-8 w-8 rounded bg-brand"
-                            ></span>
-                            <div>
-                                <p
-                                    class="text-sm uppercase tracking-widest text-neutral-500"
-                                >
-                                    Edição Piloto
-                                </p>
-                                <h3 class="text-xl font-bold">
-                                    Repouso de Sexta
-                                </h3>
-                            </div>
+        <!-- Preview -->
+        <section id="preview" class="bg-white">
+            <div class="mx-auto max-w-6xl px-4 py-12">
+                <div
+                    class="rounded-2xl border border-neutral-200 bg-white shadow-sm p-6"
+                >
+                    <div class="flex items-center gap-3">
+                        <span
+                            class="inline-block h-8 w-8 rounded bg-brand"
+                        ></span>
+                        <div>
+                            <p
+                                class="text-sm uppercase tracking-widest text-neutral-500"
+                            >
+                                Edição Piloto
+                            </p>
+                            <h3 class="text-xl font-bold">Repouso de Sexta</h3>
                         </div>
-                        <ul class="mt-6 grid grid-cols-2 gap-3 text-sm">
-                            <li class="rounded-lg border p-3">✓ Sudoku (6)</li>
-                            <li class="rounded-lg border p-3">
-                                ✓ Palavras Cruzadas (2)
-                            </li>
-                            <li class="rounded-lg border p-3">
-                                ✓ Caça‑Palavras (2)
-                            </li>
-                            <li class="rounded-lg border p-3">
-                                ✓ Labirintos (2)
-                            </li>
-                            <li class="rounded-lg border p-3">
-                                ✓ Futoshiki (2)
-                            </li>
-                            <li class="rounded-lg border p-3">
-                                + Humor & Curiosidades
-                            </li>
-                        </ul>
-                        <p class="mt-4 text-xs text-neutral-500">
-                            Soluções incluídas. Cor laranja como elemento visual
-                            principal.
-                        </p>
                     </div>
+                    <ul class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                        <li class="rounded-lg border p-3">✓ Sudoku</li>
+                        <li class="rounded-lg border p-3">
+                            ✓ Palavras Cruzadas
+                        </li>
+                        <li class="rounded-lg border p-3">✓ Caça‑Palavras</li>
+                        <li class="rounded-lg border p-3">✓ Labirintos</li>
+                        <li class="rounded-lg border p-3">✓ Futoshiki</li>
+                        <li class="rounded-lg border p-3">
+                            + Humor & Curiosidades
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-xs text-neutral-500">
+                        12 páginas pensadas para equilíbrio entre diversão e
+                        desafio.
+                    </p>
                 </div>
             </div>
         </section>
@@ -152,10 +156,10 @@
         >
             <div class="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-lg font-bold">1) Assina</h3>
+                    <h3 class="text-lg font-bold">1) Pré‑inscrição</h3>
                     <p class="mt-2 text-neutral-700">
-                        Deixa o teu email para receberes novidades e a edição
-                        piloto.
+                        Deixa o teu email para seres notificado quando o projeto
+                        arrancar.
                     </p>
                 </div>
                 <div>
@@ -171,6 +175,76 @@
                         Escolhemos os favoritos da comunidade para as próximas
                         edições.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fases -->
+        <section id="fases" class="bg-white border-y border-neutral-200">
+            <div class="mx-auto max-w-6xl px-4 py-16">
+                <h2 class="text-2xl font-extrabold mb-8">
+                    O nosso caminho até à primeira edição
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 border rounded-lg shadow-sm">
+                        <h3 class="text-lg font-bold mb-2">
+                            1. Validar a ideia
+                        </h3>
+                        <p class="text-neutral-700">
+                            Recolher emails de interessados para medir o
+                            interesse real. Meta inicial: 200 pessoas.
+                        </p>
+                    </div>
+                    <div class="p-6 border rounded-lg shadow-sm">
+                        <h3 class="text-lg font-bold mb-2">
+                            2. Produzir a edição piloto
+                        </h3>
+                        <p class="text-neutral-700">
+                            Com base no feedback dos leitores, ajustar conteúdos
+                            e layout para melhorar a experiência.
+                        </p>
+                    </div>
+                    <div class="p-6 border rounded-lg shadow-sm">
+                        <h3 class="text-lg font-bold mb-2">
+                            3. Evoluir continuamente
+                        </h3>
+                        <p class="text-neutral-700">
+                            Adicionar novos jogos e desafios a cada edição,
+                            mantendo a frescura e a surpresa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testemunhos -->
+        <section id="testemunhos" class="bg-neutral-50">
+            <div class="mx-auto max-w-6xl px-4 py-16">
+                <h2 class="text-2xl font-extrabold mb-8">
+                    O que dizem os primeiros leitores
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-white border rounded-lg shadow-sm">
+                        <p class="italic text-neutral-700">
+                            "Adorei a simplicidade e a sensação de pausa que
+                            transmite."
+                        </p>
+                        <p class="mt-4 font-semibold text-brand">— Paulo</p>
+                    </div>
+                    <div class="p-6 bg-white border rounded-lg shadow-sm">
+                        <p class="italic text-neutral-700">
+                            "Gostei muito do equilíbrio entre diversão e
+                            desafio. Quero mais!"
+                        </p>
+                        <p class="mt-4 font-semibold text-brand">— Tiago</p>
+                    </div>
+                    <div class="p-6 bg-white border rounded-lg shadow-sm">
+                        <p class="italic text-neutral-700">
+                            "Uma forma criativa de desligar e passar tempo de
+                            qualidade."
+                        </p>
+                        <p class="mt-4 font-semibold text-brand">— Marta</p>
+                    </div>
                 </div>
             </div>
         </section>
