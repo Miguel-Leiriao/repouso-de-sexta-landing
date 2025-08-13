@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidade — Jornal de Jogos</title>
+  <meta name="description" content="Política de Privacidade do Jornal de Jogos (RGPD, Portugal).">
+
+  <!-- Favicon & CSS -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-neutral-50 text-ink font-sans">
+
+  <!-- Header (coeso com o index) -->
+  <header class="border-b border-neutral-200 bg-white/80 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <span class="inline-block h-6 w-6 rounded bg-brand" aria-hidden="true"></span>
+        <span class="font-extrabold tracking-tight text-ink text-xl">Jornal de Jogos</span>
+      </a>
+      <a href="index.html" class="back-link">← Voltar</a>
+    </div>
+  </header>
+
+  <!-- Conteúdo legal com estilos dedicados -->
+  <main class="legal">
+    <h1>Política de Privacidade</h1>
+    <p class="text-neutral-700">Última atualização: <time datetime="2025-08-13">13/08/2025</time></p>
+
+    <section>
+      <h2>1. Quem somos</h2>
+      <p>“Jornal de Jogos” é um projeto editorial de jogos em papel. Para efeitos do RGPD, o responsável pelo tratamento é Miguel Leirião (<a href="mailto:repousodesexta@proton.me">repousodesexta@proton.me</a>).</p>
+    </section>
+
+    <section>
+      <h2>2. Que dados tratamos</h2>
+      <ul>
+        <li><strong>E‑mail</strong> (obrigatório) — recolhido através do formulário de pré‑inscrição para envio de notificações sobre o arranque do projeto e novidades.</li>
+      </ul>
+      <p>Não recolhemos dados sensíveis. Não utilizamos cookies de análise nem perfis. Poderão existir <em>logs</em> técnicos do alojamento.</p>
+    </section>
+
+    <section>
+      <h2>3. Finalidades e base legal</h2>
+      <p>Tratamos o teu e‑mail para <strong>enviar comunicações informativas</strong> sobre o projeto. Base legal: <strong>consentimento</strong> (art. 6.º, n.º 1, alínea a) RGPD). Podes retirar o consentimento a qualquer momento, contactando-nos.</p>
+    </section>
+
+    <section>
+      <h2>4. Conservação</h2>
+      <p>Guardamos o e‑mail até: (i) retirares o consentimento; (ii) deixarmos de necessitar dos dados para as finalidades referidas; ou (iii) obrigação legal em contrário.</p>
+    </section>
+
+    <section>
+      <h2>5. Partilha e subcontratantes</h2>
+      <p>Usamos serviços de terceiros estritamente necessários ao funcionamento do site e à receção das submissões:</p>
+      <ul>
+        <li><strong>Netlify, Inc.</strong> — alojamento estático do website (processador). Os dados técnicos (ex.: <em>logs</em>) podem ser tratados fora do EEE com salvaguardas adequadas (SCC).</li>
+        <li><strong>FormSubmit</strong> — reencaminhamento das submissões do formulário para o nosso e‑mail (processador). Apenas o endereço de e‑mail submetido é enviado.</li>
+        <li><strong>Proton</strong> — caixa de e‑mail onde recebemos as notificações.</li>
+      </ul>
+      <p>Não vendemos nem cedemos os teus dados a terceiros para fins comerciais.</p>
+    </section>
+
+    <section>
+      <h2>6. Transferências internacionais</h2>
+      <p>Quando necessário, os dados podem ser alojados/transferidos para países fora do EEE. Nesses casos, aplicamos salvaguardas adequadas, nomeadamente as <em>Standard Contractual Clauses</em> aprovadas pela Comissão Europeia.</p>
+    </section>
+
+    <section>
+      <h2>7. Os teus direitos</h2>
+      <p>Nos termos do RGPD, podes exercer os direitos de acesso, retificação, apagamento, limitação, portabilidade e oposição. Para exercer, contacta: <a href="mailto:repousodesexta@proton.me">repousodesexta@proton.me</a>.</p>
+      <p>Tens ainda o direito de apresentar reclamação junto da <strong>CNPD</strong> (Comissão Nacional de Proteção de Dados) em <a href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a>.</p>
+    </section>
+
+    <section>
+      <h2>8. Segurança</h2>
+      <p>Aplicamos medidas técnicas e organizativas adequadas para proteger os dados pessoais de destruição, perda, alteração, divulgação ou acesso não autorizados.</p>
+    </section>
+
+    <section>
+      <h2>9. Contactos</h2>
+      <p>Dúvidas sobre esta política? Escreve para <a href="mailto:repousodesexta@proton.me">repousodesexta@proton.me</a>.</p>
+    </section>
+  </main>
+
+  <!-- Footer com regra brand (coeso) -->
+  <footer class="py-10 brand-rule">
+    <div class="mx-auto max-w-6xl px-4 text-sm text-neutral-600">
+      © <span id="year"></span> Jornal de Jogos
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
