@@ -1,253 +1,214 @@
 <!doctype html>
 <html lang="pt">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Jornal de Jogos — Diversão semanal no papel</title>
-        <meta
-            name="description"
-            content="Sudoku, palavras cruzadas, labirintos e muito mais. Recebe a edição piloto do Jornal de Jogos."
-        />
-        <link rel="preload" href="/css/style.css" as="style" />
-        <link rel="stylesheet" href="/css/style.css" />
-    </head>
-    <body class="min-h-screen antialiased bg-neutral-50 text-neutral-900">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jornal de Jogos — Diversão semanal no papel</title>
+    <meta name="description" content="Deixa o teu email para seres notificado quando o Jornal de Jogos arrancar. 12 páginas de diversão e repouso mental: sudoku, palavras cruzadas, labirintos e mais." />
+    <!-- Favicon (cria /favicon.svg e opcionalmente /favicon.ico) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- CSS -->
+    <link rel="preload" href="css/style.css" as="style" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- JS -->
+    <script src="js/main.js" defer></script>
+  </head>
+
+    <body class="min-h-screen antialiased bg-neutral-50 text-ink font-sans">
+        <!-- Skip to content (aparece ao tab) -->
+        <a href="#main" class="skip-link">Saltar para o conteúdo</a>
         <!-- Header -->
-        <header class="border-b border-neutral-200 bg-white/80 backdrop-blur">
-            <div
-                class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between"
-            >
+         <header class="border-b border-neutral-200 bg-white/80 backdrop-blur">
+            <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+                <!-- Logo -->
                 <a href="#" class="flex items-center gap-2">
-                    <span class="inline-block h-6 w-6 rounded bg-brand"></span>
-                    <span class="font-extrabold tracking-tight"
-                        >Jornal de Jogos</span
-                    >
+                <span class="inline-block h-6 w-6 rounded bg-brand" aria-hidden="true"></span>
+                <span class="font-extrabold tracking-tight text-ink text-3xl">Jornal de Jogos</span>
                 </a>
-                <nav class="hidden md:flex items-center gap-6 text-sm">
-                    <a href="#preview" class="hover:text-brand"
-                        >Pré‑visualização</a
-                    >
-                    <a href="#fases" class="hover:text-brand">Fases</a>
-                    <a href="#testemunhos" class="hover:text-brand"
-                        >Testemunhos</a
-                    >
-                    <a href="#faq" class="hover:text-brand">FAQ</a>
+
+                <!-- Nav desktop -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm" aria-label="Navegação principal">
+                <a href="#preview" class="hover:text-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 rounded">Pré‑visualização</a>
+                <a href="#fases" class="hover:text-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 rounded">Fases</a>
+                <a href="#testemunhos" class="hover:text-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 rounded">Testemunhos</a>
+                <a href="#faq" class="hover:text-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 rounded">FAQ</a>
+                <a href="#newsletter" class="px-4 py-2 font-semibold text-sm rounded bg-brand text-ink hover:opacity-80 transition">Quero ser avisado</a>
                 </nav>
-                <a
-                    href="#newsletter"
-                    class="btn-primary text-sm px-4 py-2 rounded bg-brand text-white hover:bg-brand-dark transition"
-                    >Quero ser avisado</a
-                >
+
+                <!-- Botão hambúrguer (só mobile) -->
+                <button
+                id="menu-btn"
+                class="hamburger lg:hidden focus:outline-none"
+                type="button"
+                aria-label="Abrir menu"
+                aria-controls="mobile-menu"
+                aria-expanded="false">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+                </button>
+            </div>
+
+            <!-- Menu mobile NO FLUXO (empurra conteúdo) -->
+            <div id="mobile-menu" class="lg:hidden hidden border-t border-neutral-200 bg-white">
+                <nav class="mx-auto max-w-6xl px-4 py-4 flex flex-col gap-3 font-semibold text-ink" aria-label="Menu móvel">
+                <a href="#preview" class="py-2 hover:text-brand">Pré‑visualização</a>
+                <a href="#fases" class="py-2 hover:text-brand">Fases</a>
+                <a href="#testemunhos" class="py-2 hover:text-brand">Testemunhos</a>
+                <a href="#faq" class="py-2 hover:text-brand">FAQ</a>
+                <a href="#newsletter" class="mt-2 py-3 text-center rounded bg-brand text-ink hover:opacity-80">Quero ser avisado</a>
+                </nav>
             </div>
         </header>
 
+        <main id="main">
         <!-- Hero + Preview lado a lado -->
         <section class="relative">
-            <div
-                class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center"
-            >
-                <!-- Texto -->
-                <div>
-                    <h1
-                        class="text-4xl md:text-5xl font-extrabold leading-tight"
-                    >
-                        12 páginas de
-                        <span class="title-gradient"
-                            >diversão e repouso mental</span
-                        >
-                    </h1>
-                    <p class="mt-4 text-lg text-neutral-700">
-                        Este jornal de mini-jogos nasceu da minha necessidade de
-                        abrandar o ritmo num mundo cada vez mais digital. É um
-                        convite a desligar por um momento, aproveitar o fim de
-                        semana para relaxar e, ao mesmo tempo, estimular a
-                        mente. Aqui, cada página é pensada para proporcionar um
-                        equilíbrio entre diversão e desafio, criando pequenos
-                        momentos de tranquilidade e foco que considero
-                        essenciais.
-                    </p>
-                    <p class="mt-4 text-lg text-neutral-800 font-semibold">
-                        Deixa o teu email e recebe um aviso quando o projeto
-                        começar a funcionar.
-                    </p>
+        <div class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+            <!-- Texto -->
+            <div>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                12 páginas de <span class="title-gradient">diversão e repouso mental</span>
+            </h1>
+            <p class="mt-4 text-lg text-neutral-700">
+                Este jornal de mini-jogos nasceu da minha necessidade de abrandar o ritmo num mundo cada vez mais digital.
+                É um convite a desligar por um momento, aproveitar o fim de semana para relaxar e, ao mesmo tempo, estimular a mente.
+                Aqui, cada página é pensada para proporcionar um equilíbrio entre diversão e desafio, criando pequenos momentos de tranquilidade e foco que considero essenciais.
+            </p>
+            <p class="mt-4 text-lg font-semibold">
+                Deixa o teu email e recebe um aviso quando o projeto começar a funcionar.
+            </p>
 
-                    <div class="mt-8">
-                        <form
-                            id="newsletter"
-                            name="newsletter"
-                            method="POST"
-                            data-netlify="true"
-                            netlify-honeypot="bot-field"
-                            class="w-full max-w-lg"
-                        >
-                            <input
-                                type="hidden"
-                                name="form-name"
-                                value="newsletter"
-                            />
-                            <p class="hidden">
-                                <label
-                                    >Não preencher: <input name="bot-field"
-                                /></label>
-                            </p>
-                            <div class="flex gap-3">
-                                <input
-                                    type="email"
-                                    name="email"
-                                    required
-                                    placeholder="o.teu@email"
-                                    class="flex-1 rounded border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-brand/50"
-                                />
-                                <button
-                                    type="submit"
-                                    class="rounded px-5 py-3 font-semibold bg-brand text-white hover:bg-brand-dark transition"
-                                >
-                                    Quero ser avisado
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="mt-8">
+                <form id="newsletter" class="w-full max-w-lg" aria-labelledby="newsletter-title" aria-describedby="newsletter-help">
+                    <p class="hidden"><label>Não preencher: <input name="bot-field" /></label></p>
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="Novo subscritor do Jornal de Jogos!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_autoresponse" value="Obrigado por te inscreveres no Jornal de Jogos! Avisaremos quando estiver pronto.">
 
-                <!-- Preview -->
-                <div id="preview" class="relative">
-                    <div
-                        class="rounded-2xl border border-neutral-200 bg-white shadow-sm p-6"
-                    >
-                        <div class="flex items-center gap-3">
-                            <span
-                                class="inline-block h-8 w-8 rounded bg-brand"
-                            ></span>
-                            <div>
-                                <p
-                                    class="text-sm uppercase tracking-widest text-neutral-500"
-                                >
-                                    Edição Piloto
-                                </p>
-                                <h3 class="text-xl font-bold">
-                                    Repouso de Sexta
-                                </h3>
-                            </div>
-                        </div>
-                        <ul class="mt-6 grid grid-cols-2 gap-3 text-sm">
-                            <li class="rounded-lg border p-3">✓ Sudoku</li>
-                            <li class="rounded-lg border p-3">
-                                ✓ Palavras Cruzadas
-                            </li>
-                            <li class="rounded-lg border p-3">
-                                ✓ Caça-Palavras
-                            </li>
-                            <li class="rounded-lg border p-3">✓ Labirintos</li>
-                            <li class="rounded-lg border p-3">✓ Futoshiki</li>
-                            <li class="rounded-lg border p-3">
-                                + Humor & Curiosidades
-                            </li>
-                        </ul>
-                        <p class="mt-4 text-xs text-neutral-500">
-                            12 páginas pensadas para equilíbrio entre diversão e
-                            desafio.
-                        </p>
+                    <h2 id="newsletter-title" class="sr-only">Pré-inscrição no Jornal de Jogos</h2>
+                    <p id="newsletter-help" class="sr-only">Insere o teu email para receberes um aviso quando o projeto arrancar.</p>
+
+                    <label for="email" class="sr-only">O teu email</label>
+                    <div class="flex gap-3">
+                        <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        required
+                        autocomplete="email"
+                        inputmode="email"
+                        placeholder="adorojogar@email"
+                        class="flex-1 rounded border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-brand/50"
+                        aria-required="true"
+                        aria-invalid="false"
+                        />
+                        <button type="submit" class="rounded px-5 py-3 font-semibold text-lg bg-brand text-ink hover:opacity-80 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50">
+                        Quero ser avisado
+                        </button>
                     </div>
-                </div>
+                    </form>
             </div>
+            </div>
+
+            <!-- Preview -->
+            <div id="preview" class="relative">
+            <div class="rounded-2xl border border-neutral-200 bg-white shadow-sm p-6">
+                <div class="flex items-center gap-3">
+                <span class="inline-block h-8 w-8 rounded bg-brand" aria-hidden="true"></span>
+                <div>
+                    <p class="text-sm uppercase tracking-widest text-neutral-500">Edição Piloto</p>
+                    <h3 class="text-xl font-bold">Repouso de Sexta</h3>
+                </div>
+                </div>
+                <ul class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                <li class="rounded-lg border p-3">✓ Sudoku</li>
+                <li class="rounded-lg border p-3">✓ Palavras Cruzadas</li>
+                <li class="rounded-lg border p-3">✓ Caça Palavras</li>
+                <li class="rounded-lg border p-3">✓ Labirintos</li>
+                <li class="rounded-lg border p-3">✓ Futoshiki</li>
+                <li class="rounded-lg border p-3">+ Humor & Curiosidades</li>
+                </ul>
+                <p class="mt-4 text-xs text-neutral-600">
+                12 páginas pensadas para equilíbrio entre diversão e desafio.
+                </p>
+            </div>
+            </div>
+        </div>
         </section>
 
         <!-- Como funciona -->
-        <section
-            id="como-funciona"
-            class="bg-white border-y border-neutral-200"
-        >
-            <div class="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-lg font-bold">1) Pré‑inscrição</h3>
-                    <p class="mt-2 text-neutral-700">
-                        Deixa o teu email para seres notificado quando o projeto
-                        arrancar.
-                    </p>
+        <section id="como-funciona" class="bg-paper border-y border-neutral-200">
+            <div class="mx-auto max-w-6xl px-4 py-16">
+                <h2 class="section-title mb-8">Como funciona</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-brand">
+                    <p class="text-lg font-bold mb-1"><span class="step-badge">1</span>Pré‑inscrição</p>
+                    <p class="text-neutral-700 ml-11">Deixa o teu email para seres notificado quando o projeto arrancar.</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold">2) Explora</h3>
-                    <p class="mt-2 text-neutral-700">
-                        Jogos clássicos e criativos, sempre equilibrando
-                        estética e legibilidade.
-                    </p>
+                <div class="card-brand">
+                    <p class="text-lg font-bold mb-1"><span class="step-badge">2</span>Explora</p>
+                    <p class="text-neutral-700 ml-11">Jogos clássicos e criativos, sempre equilibrando estética e legibilidade.</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold">3) Dá feedback</h3>
-                    <p class="mt-2 text-neutral-700">
-                        Escolhemos os favoritos da comunidade para as próximas
-                        edições.
-                    </p>
+                <div class="card-brand">
+                    <p class="text-lg font-bold mb-1"><span class="step-badge">3</span>Dá feedback</p>
+                    <p class="text-neutral-700 ml-11">Escolhemos os favoritos da comunidade para as próximas edições.</p>
+                </div>
                 </div>
             </div>
         </section>
 
         <!-- Fases -->
-        <section id="fases" class="bg-white border-y border-neutral-200">
+        <section id="fases" class="bg-white border-y border-neutral-200 brand-rule">
             <div class="mx-auto max-w-6xl px-4 py-16">
-                <h2 class="text-2xl font-extrabold mb-8">
-                    O nosso caminho até à primeira edição
-                </h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="p-6 border rounded-lg shadow-sm">
-                        <h3 class="text-lg font-bold mb-2">
-                            1. Validar a ideia
-                        </h3>
-                        <p class="text-neutral-700">
-                            Recolher emails de interessados para medir o
-                            interesse real. Meta inicial: 200 pessoas.
-                        </p>
+                <h2 class="section-title mb-8">O nosso caminho até à primeira edição</h2>
+
+                <div class="relative">
+                <!-- Linha horizontal (desktop) -->
+                <div id="fases-line-h" class="hidden md:block absolute left-4 right-4 h-1 bg-brand rounded"></div>
+                <!-- Linha vertical (mobile) -->
+                <div class="md:hidden absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-brand rounded"></div>
+                
+                <!-- Grid com offsets “escadinha” em md+ -->
+                <div class="grid md:grid-cols-3 gap-8 relative">
+                    <div class="card-brand md:mt-0">
+                    <h3 class="text-lg font-bold mb-2"><span class="step-badge">1</span>Validar a ideia</h3>
+                    <p class="text-neutral-700 ml-11">Recolher emails de interessados para medir o interesse real. Meta inicial: 200 pessoas.</p>
                     </div>
-                    <div class="p-6 border rounded-lg shadow-sm">
-                        <h3 class="text-lg font-bold mb-2">
-                            2. Produzir a edição piloto
-                        </h3>
-                        <p class="text-neutral-700">
-                            Com base no feedback dos leitores, ajustar conteúdos
-                            e layout para melhorar a experiência.
-                        </p>
+
+                    <div class="card-brand md:mt-6">
+                    <h3 class="text-lg font-bold mb-2"><span class="step-badge">2</span>Produzir a edição piloto</h3>
+                    <p class="text-neutral-700 ml-11">Com base no feedback dos leitores, ajustar conteúdos e layout para melhorar a experiência.</p>
                     </div>
-                    <div class="p-6 border rounded-lg shadow-sm">
-                        <h3 class="text-lg font-bold mb-2">
-                            3. Evoluir continuamente
-                        </h3>
-                        <p class="text-neutral-700">
-                            Adicionar novos jogos e desafios a cada edição,
-                            mantendo a frescura e a surpresa.
-                        </p>
+
+                    <div class="card-brand md:mt-12">
+                    <h3 class="text-lg font-bold mb-2"><span class="step-badge">3</span>Evoluir continuamente</h3>
+                    <p class="text-neutral-700 ml-11">Adicionar novos jogos e desafios a cada edição, mantendo a frescura e a surpresa.</p>
                     </div>
                 </div>
+                </div>
             </div>
-        </section>
+            </section>
 
         <!-- Testemunhos -->
         <section id="testemunhos" class="bg-neutral-50">
             <div class="mx-auto max-w-6xl px-4 py-16">
-                <h2 class="text-2xl font-extrabold mb-8">
-                    O que dizem os primeiros leitores
-                </h2>
+                <h2 class="section-title mb-8">O que dizem os primeiros leitores</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="p-6 bg-white border rounded-lg shadow-sm">
-                        <p class="italic text-neutral-700">
-                            "Adorei a simplicidade e a sensação de pausa que
-                            transmite."
-                        </p>
-                        <p class="mt-4 font-semibold text-brand">— Paulo</p>
-                    </div>
-                    <div class="p-6 bg-white border rounded-lg shadow-sm">
-                        <p class="italic text-neutral-700">
-                            "Gostei muito do equilíbrio entre diversão e
-                            desafio. Quero mais!"
-                        </p>
-                        <p class="mt-4 font-semibold text-brand">— Tiago</p>
-                    </div>
-                    <div class="p-6 bg-white border rounded-lg shadow-sm">
-                        <p class="italic text-neutral-700">
-                            "Uma forma criativa de desligar e passar tempo de
-                            qualidade."
-                        </p>
-                        <p class="mt-4 font-semibold text-brand">— Marta</p>
-                    </div>
+                <div class="card-brand">
+                    <p class="italic text-neutral-700">"Adorei a simplicidade e a sensação de pausa que transmite."</p>
+                    <p class="mt-4 font-semibold text-ink relative inline-block after:content-[''] after:block after:h-[2px] after:bg-brand after:ml-4 after:mt-[0px] after:w-8">Paulo</p>
+                </div>
+                <div class="card-brand">
+                    <p class="italic text-neutral-700">"Gostei muito do equilíbrio entre diversão e desafio. Quero mais!"</p>
+                    <p class="mt-4 font-semibold text-ink relative inline-block after:content-[''] after:block after:h-[2px] after:bg-brand after:ml-4 after:mt-[0px] after:w-8">Tiago</p>
+                </div>
+                <div class="card-brand">
+                    <p class="italic text-neutral-700">"Uma forma criativa de desligar e passar tempo de qualidade."</p>
+                    <p class="mt-4 font-semibold text-ink relative inline-block after:content-[''] after:block after:h-[2px] after:bg-brand after:ml-4 after:mt-[0px] after:w-8">Marta</p>
+                </div>
                 </div>
             </div>
         </section>
@@ -255,45 +216,81 @@
         <!-- FAQ -->
         <section id="faq" class="bg-neutral-50">
             <div class="mx-auto max-w-6xl px-4 py-16">
-                <h2 class="text-2xl font-extrabold">Perguntas frequentes</h2>
+                <h2 class="section-title">Perguntas frequentes</h2>
                 <div class="mt-6 space-y-4">
-                    <details
-                        class="rounded-lg border border-neutral-200 bg-white p-4"
-                    >
-                        <summary class="font-semibold cursor-pointer">
-                            Quando sai a edição piloto?
-                        </summary>
-                        <p class="mt-2 text-neutral-700">
-                            Em breve. Inscreve-te para seres avisado em primeiro
-                            lugar.
-                        </p>
-                    </details>
-                    <details
-                        class="rounded-lg border border-neutral-200 bg-white p-4"
-                    >
-                        <summary class="font-semibold cursor-pointer">
-                            Há versão digital?
-                        </summary>
-                        <p class="mt-2 text-neutral-700">
-                            Planeada para mais tarde. O foco inicial é a
-                            experiência física.
-                        </p>
-                    </details>
+                <details class="rounded-lg border border-brand/30 bg-white p-4">
+                    <summary class="font-semibold cursor-pointer">Quando sai a edição piloto?</summary>
+                    <p class="mt-2 text-neutral-700">Em breve. Inscreve-te para seres avisado em primeiro lugar.</p>
+                </details>
+                <details class="rounded-lg border border-brand/30 bg-white p-4">
+                    <summary class="font-semibold cursor-pointer">Há versão digital?</summary>
+                    <p class="mt-2 text-neutral-700">Planeada para mais tarde. O foco inicial é a experiência física.</p>
+                </details>
                 </div>
             </div>
         </section>
+    </main>
+    
+    <!-- Modal sucesso -->
+    <div id="success-backdrop" class="fixed inset-0 bg-black/40 hidden flex items-center justify-center p-4 z-50">
+    <div role="dialog" aria-modal="true" aria-labelledby="success-title"
+        class="w-full max-w-lg rounded-2xl bg-white p-8 shadow-2xl relative text-center">
+        
+        <!-- Botão fechar -->
+        <button id="success-close" aria-label="Fechar"
+                class="absolute right-4 top-4 p-2 rounded-md hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand/50">
+        <!-- Ícone X em SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+            viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18"
+                stroke="#1C1C1C" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        </button>
 
-        <!-- Footer -->
-        <footer class="py-10">
-            <div class="mx-auto max-w-6xl px-4 text-sm text-neutral-600">
-                © <span id="year"></span> Jornal de Jogos — Todos os direitos
-                reservados
+        <!-- Mensagem -->
+        <h3 id="success-title" class="text-2xl md:text-3xl font-extrabold text-ink">Obrigado!</h3>
+        <p class="mt-3 text-lg text-neutral-700">
+        Recebemos o teu email. Avisamos-te quando arrancarmos 😊
+        </p>
+        <p class="mt-2 text-neutral-700">
+        Entretanto, espreita a pré-visualização e partilha com alguém que também mereça uma pausa.
+        </p>
+
+        <!-- Botão de ação -->
+        <a href="#preview"
+        class="mt-6 inline-flex items-center gap-2 rounded px-5 py-3 bg-brand text-ink hover:opacity-80 transition">
+        Ver pré-visualização
+        </a>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-10 brand-rule">
+        <div class="mx-auto max-w-6xl px-4 grid gap-6 md:grid-cols-3 text-sm">
+            <div>
+            <p class="font-bold text-ink">Jornal de Jogos</p>
+            <p class="mt-2 text-neutral-700">12 páginas de diversão e repouso mental. Um convite a abrandar e a jogar.</p>
             </div>
-        </footer>
 
-        <script>
-            document.getElementById("year").textContent =
-                new Date().getFullYear();
-        </script>
-    </body>
+            <div>
+            <p class="font-bold text-ink">Contacto</p>
+            <ul class="mt-2 space-y-1">
+                <li><a href="mailto:repousodesexta@proton.me" class="underline underline-offset-2 hover:opacity-80">repousodesexta@proton.me</a></li>
+            </ul>
+            </div>
+
+            <div>
+            <p class="font-bold text-ink">Legal</p>
+            <ul class="mt-2 space-y-1">
+                <li><a href="privacidade.html" class="underline underline-offset-2 hover:opacity-80">Política de Privacidade</a></li>
+                <li><a href="termos.html" class="underline underline-offset-2 hover:opacity-80">Termos</a></li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="mx-auto max-w-6xl px-4 mt-8 text-xs text-neutral-600">
+            © <span id="year"></span> Jornal de Jogos &middot; Conteúdo sob CC BY‑NC 4.0
+        </div>
+        </footer>
+  </body>
 </html>

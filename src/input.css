@@ -2,10 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Utilitário pequeno para títulos do projeto */
+/* Utilitário de título com leve “brilho” do laranja */
 @layer utilities {
-    .title-gradient {
-        @apply bg-clip-text text-transparent;
-        background-image: linear-gradient(90deg, #ff7a00, #ffaf66);
+  .title-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, #F28C28, #ffb264);
+  }
+}
+
+/* Componentes que usas várias vezes */
+@layer components {
+
+    .hamburger { @apply relative w-8 h-8; }
+    .hamburger span { @apply absolute left-1/2 -translate-x-1/2 block w-6 h-0.5 bg-ink rounded transition; }
+    .hamburger-top { top: 9px; }
+    .hamburger-middle { top: 16px; }
+    .hamburger-bottom { top: 23px; }
+
+    /* Estado ativo (X) */
+    .hamburger.active .hamburger-top { transform: translate(-50%, 7px) rotate(45deg); }
+    .hamburger.active .hamburger-middle { opacity: 0; }
+    .hamburger.active .hamburger-bottom { transform: translate(-50%, -7px) rotate(-45deg); }
+
+    /* Título de secção coerente com o hero */
+    .section-title {
+        @apply text-2xl font-extrabold flex items-center gap-3;
     }
+    .section-title::before {
+        content: "";
+        @apply inline-block w-8 h-1 rounded bg-brand;
+    }
+
+    /* Cartão com barra superior laranja (coeso com preview) */
+    .card-brand {
+        @apply rounded-2xl border border-neutral-200 bg-white shadow-sm p-6 relative;
+    }
+    .card-brand::after {
+        content: "";
+        @apply absolute left-0 top-0 h-1 w-full bg-brand rounded-t-2xl;
+    }
+
+    /* Badge numerada para “Fases” */
+    .step-badge {
+        @apply inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand text-ink font-bold mr-3;
+    }
+
+    /* Regra superior laranja para separar secções */
+    .brand-rule {
+        @apply border-t-4;
+        border-color: #F28C28;
+    }
+  .btn {
+    @apply inline-flex items-center justify-center rounded px-5 py-3 font-semibold transition;
+  }
+  /* CTA principal: laranja com texto ink (coerente com paleta) */
+    .btn-primary {
+    @apply btn bg-brand text-ink hover:bg-brand/90;
+    }
+  /* Botão secundário: contorno laranja (texto escuro acessível) */
+  .btn-outline {
+    @apply btn border border-brand text-ink hover:bg-brand/10;
+  }
+
+  .card {
+    @apply rounded-2xl border border-neutral-200 bg-white shadow-sm p-6;
+  }
+
+  .section {
+    @apply mx-auto max-w-6xl px-4;
+  }
+
+  .link {
+    @apply text-accent underline-offset-2 hover:underline;
+  }
+
+  /* Pequenas etiquetas ou contadores */
+  .badge {
+    @apply inline-flex items-center rounded-full bg-paper text-ink/70 px-2 py-0.5 text-xs border border-neutral-200;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only fixed left-2 top-2 z-50 bg-white border border-neutral-300 px-3 py-2 rounded shadow;
+  }
+
+  /* PRIVACIDADE*/
+  /* Estilo comum para páginas legais (Privacidade/Termos) */
+  .legal {
+    @apply max-w-3xl mx-auto px-4 py-10 leading-relaxed;
+  }
+  .legal h1 {
+    @apply text-3xl font-extrabold mb-6 text-ink;
+  }
+  .legal h2 {
+    @apply text-xl font-bold mt-8 mb-3 text-ink;
+  }
+  .legal h3 {
+    @apply text-lg font-semibold mt-6 mb-2 text-ink;
+  }
+  .legal p {
+    @apply text-neutral-700 mt-3;
+  }
+  .legal ul, .legal ol {
+    @apply mt-3 pl-6;
+  }
+  .legal ul { list-style: disc; }
+  .legal ol { list-style: decimal; }
+  .legal li { @apply mt-1 text-neutral-700; }
+
+  .legal a {
+    @apply underline underline-offset-2 hover:opacity-80;
+  }
+
+  /* Separadores suaves entre blocos */
+  .legal section + section {
+    @apply mt-8 pt-6 border-t border-neutral-200;
+  }
+
+  /* Link “voltar” no topo */
+  .back-link {
+    @apply inline-flex items-center gap-2 text-sm underline underline-offset-2 hover:opacity-80;
+  }
 }
